@@ -5,6 +5,7 @@ from openpyxl import load_workbook
 excel_file = 'Documents/Input/duct.xlsx'
 df = pd.read_excel(excel_file)
 
+#carriageway loc no and wayleave no
 # *********************** carriageway_S+T_modular loc no and wayleave no  *********************************************
 
 carriageway_s_t_modular = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == False)
@@ -814,8 +815,6 @@ ws = wb[sheets[n]]
 ws_tables = []
 ws["E44"] = num_of_rows_cw_t_tarmac_total
 wb.save(filename)
-
-
 
 # *********************** footway_S_tarmac loc no and wayleave no  ************************************************
 
