@@ -1592,7 +1592,7 @@ ws_tables = []
 ws["D55"] = num_of_rows_fw_t_unmade_grassverge_total
 wb.save(filename)
 
-# *********************** footway_t_tarmac loc no and wayleave no  ************************************************
+# *********************** footway_T_tarmac loc no and wayleave no  ************************************************
 
 footway_t_tarmac = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Footway') & (df['loc'] == False)
                          & (df['wayleave'] == False) & (df['material'] == 'Tarmac') & (df['type'] == 'Trunk') ]
@@ -1618,3 +1618,800 @@ ws_tables = []
 ws["E55"] = num_of_rows_fw_t_tarmac_total
 wb.save(filename)
 
+# *********************** road crossing_S+T_modular loc no and wayleave no  *********************************************
+
+roadcrossing_s_t_modular = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Modular' ) & (df['type'] == 'Access & Trunk') ]
+
+roadcrossing_s_t_modular_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Modular') & (df['type'] == 'Access & Trunk')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_rc_s_t_modular = roadcrossing_s_t_modular['length'].sum()
+
+num_of_rows_rc_s_t_modular_2x96 = roadcrossing_s_t_modular_2x96['length'].sum()
+
+num_of_rows_rc_s_t_modular_total = num_of_rows_rc_s_t_modular + num_of_rows_rc_s_t_modular_2x96
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["B60"] = num_of_rows_rc_s_t_modular_total
+wb.save(filename)
+
+# *********************** road crossing_S+T_concrete loc no and wayleave no  *********************************************
+
+roadcrossing_s_t_concrete = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Concrete') & (df['type'] == 'Access & Trunk') ]
+
+roadcrossing_s_t_concrete_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Concrete') & (df['type'] == 'Access & Trunk')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_rc_s_t_concrete = roadcrossing_s_t_concrete['length'].sum()
+
+num_of_rows_rc_s_t_concrete_2x96 = roadcrossing_s_t_concrete_2x96['length'].sum()
+
+num_of_rows_rc_s_t_concrete_total = num_of_rows_rc_s_t_concrete + num_of_rows_rc_s_t_concrete_2x96
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["C60"] = num_of_rows_rc_s_t_concrete_total
+wb.save(filename)
+
+# *********************** road crossing_S+T_unmade and grassverge loc no and wayleave no  *********************************************
+
+roadcrossing_s_t_grassverge = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Grass Verge') & (df['type'] == 'Access & Trunk')]
+
+roadcrossing_s_t_unmade = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Unmade') & (df['type'] == 'Access & Trunk')]
+
+roadcrossing_s_t_grassverge_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Grass Verge') & (df['type'] == 'Access & Trunk') & (df['96mm'] == '2x96')]
+
+roadcrossing_s_t_unmade_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Unmade') & (df['type'] == 'Access & Trunk') & (df['96mm'] == '2x96')]
+
+
+num_of_rows_rc_s_t_grassverge = roadcrossing_s_t_grassverge['length'].sum()
+
+num_of_rows_rc_s_t_unmade = roadcrossing_s_t_unmade['length'].sum()
+
+num_of_rows_rc_s_t_grassverge_2x96 = roadcrossing_s_t_grassverge_2x96['length'].sum()
+
+num_of_rows_rc_s_t_unmade_2x96 = roadcrossing_s_t_unmade_2x96['length'].sum()
+
+num_of_rows_rc_s_t_unmade_grassverge_total = num_of_rows_rc_s_t_grassverge + num_of_rows_rc_s_t_unmade + num_of_rows_rc_s_t_grassverge_2x96 + num_of_rows_rc_s_t_unmade_2x96
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["D60"] = num_of_rows_rc_s_t_unmade_grassverge_total
+wb.save(filename)
+
+# *********************** road crossing_S+T_tarmac loc no and wayleave no  *********************************************
+
+roadcrossing_s_t_tarmac = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Tarmac' ) & (df['type'] == 'Access & Trunk') ]
+
+roadcrossing_s_t_tarmac_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Tarmac') & (df['type'] == 'Access & Trunk')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_rc_s_t_tarmac = roadcrossing_s_t_tarmac['length'].sum()
+
+num_of_rows_rc_s_t_tarmac_2x96 = roadcrossing_s_t_tarmac_2x96['length'].sum()
+
+num_of_rows_rc_s_t_tarmac_total = num_of_rows_rc_s_t_tarmac + num_of_rows_rc_s_t_tarmac_2x96
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["E60"] = num_of_rows_rc_s_t_tarmac_total
+wb.save(filename)
+
+# *********************** road crossing_D+T_modular loc no and wayleave no  *********************************************
+
+roadcrossing_d_t_modular = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Modular' ) & (df['type'] == 'Distribution & Trunk') ]
+
+roadcrossing_d_t_modular_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Modular') & (df['type'] == 'Distribution & Trunk')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_rc_d_t_modular = roadcrossing_d_t_modular['length'].sum()
+
+num_of_rows_rc_d_t_modular_2x96 = roadcrossing_d_t_modular_2x96['length'].sum()
+
+num_of_rows_rc_d_t_modular_total = num_of_rows_rc_d_t_modular + num_of_rows_rc_d_t_modular_2x96
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["B61"] = num_of_rows_rc_d_t_modular_total
+wb.save(filename)
+
+# *********************** road crossing_D+T_concrete loc no and wayleave no  *********************************************
+
+roadcrossing_d_t_concrete = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Concrete') & (df['type'] == 'Distribution & Trunk') ]
+
+roadcrossing_d_t_concrete_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Concrete') & (df['type'] == 'Distribution & Trunk')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_rc_d_t_concrete = roadcrossing_d_t_concrete['length'].sum()
+
+num_of_rows_rc_d_t_concrete_2x96 = roadcrossing_d_t_concrete_2x96['length'].sum()
+
+num_of_rows_rc_d_t_concrete_total = num_of_rows_rc_d_t_concrete + num_of_rows_rc_d_t_concrete_2x96
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["C61"] = num_of_rows_rc_d_t_concrete_total
+wb.save(filename)
+
+# *********************** road crossing_D+T_unmade and grassverge loc no and wayleave no  *********************************************
+
+roadcrossing_d_t_grassverge = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Grass Verge') & (df['type'] == 'Distribution & Trunk')]
+
+roadcrossing_d_t_unmade = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Unmade') & (df['type'] == 'Distribution & Trunk')]
+
+roadcrossing_d_t_grassverge_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Grass Verge') & (df['type'] == 'Distribution & Trunk') & (df['96mm'] == '2x96')]
+
+roadcrossing_d_t_unmade_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Unmade') & (df['type'] == 'Distribution & Trunk') & (df['96mm'] == '2x96')]
+
+
+num_of_rows_rc_d_t_grassverge = roadcrossing_d_t_grassverge['length'].sum()
+
+num_of_rows_rc_d_t_unmade = roadcrossing_d_t_unmade['length'].sum()
+
+num_of_rows_rc_d_t_grassverge_2x96 = roadcrossing_d_t_grassverge_2x96['length'].sum()
+
+num_of_rows_rc_d_t_unmade_2x96 = roadcrossing_d_t_unmade_2x96['length'].sum()
+
+num_of_rows_rc_d_t_unmade_grassverge_total = num_of_rows_rc_d_t_grassverge + num_of_rows_rc_d_t_unmade + num_of_rows_rc_d_t_grassverge_2x96 + num_of_rows_rc_d_t_unmade_2x96
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["D61"] = num_of_rows_rc_d_t_unmade_grassverge_total
+wb.save(filename)
+
+# *********************** road crossing_D+T_tarmac loc no and wayleave no  *********************************************
+
+roadcrossing_d_t_tarmac = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Tarmac' ) & (df['type'] == 'Distribution & Trunk') ]
+
+roadcrossing_d_t_tarmac_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Tarmac') & (df['type'] == 'Distribution & Trunk')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_rc_d_t_tarmac = roadcrossing_d_t_tarmac['length'].sum()
+
+num_of_rows_rc_d_t_tarmac_2x96 = roadcrossing_d_t_tarmac_2x96['length'].sum()
+
+num_of_rows_rc_d_t_tarmac_total = num_of_rows_rc_d_t_tarmac + num_of_rows_rc_d_t_tarmac_2x96
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["E61"] = num_of_rows_rc_d_t_tarmac_total
+wb.save(filename)
+
+# *********************** road crossing_D_modular loc no and wayleave no  *********************************************
+
+roadcrossing_d_modular = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Modular' ) & (df['type'] == 'Distribution') ]
+
+roadcrossing_d_modular_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Modular') & (df['type'] == 'Distribution')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_rc_d_modular = roadcrossing_d_modular['length'].sum()
+
+num_of_rows_rc_d_modular_2x96 = roadcrossing_d_modular_2x96['length'].sum()
+
+num_of_rows_rc_d_modular_total = num_of_rows_rc_d_modular + num_of_rows_rc_d_modular_2x96
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["B62"] = num_of_rows_rc_d_modular_total
+wb.save(filename)
+
+# *********************** road crossing_D_concrete loc no and wayleave no  *********************************************
+
+roadcrossing_d_concrete = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Concrete') & (df['type'] == 'Distribution') ]
+
+roadcrossing_d_concrete_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Concrete') & (df['type'] == 'Distribution')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_rc_d_concrete = roadcrossing_d_concrete['length'].sum()
+
+num_of_rows_rc_d_concrete_2x96 = roadcrossing_d_concrete_2x96['length'].sum()
+
+num_of_rows_rc_d_concrete_total = num_of_rows_rc_d_concrete + num_of_rows_rc_d_concrete_2x96
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["C62"] = num_of_rows_rc_d_concrete_total
+wb.save(filename)
+
+# *********************** road crossing_D_unmade and grassverge loc no and wayleave no  *********************************************
+
+roadcrossing_d_grassverge = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Grass Verge') & (df['type'] == 'Distribution')]
+
+roadcrossing_d_unmade = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Unmade') & (df['type'] == 'Distribution')]
+
+roadcrossing_d_grassverge_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Grass Verge') & (df['type'] == 'Distribution') & (df['96mm'] == '2x96')]
+
+roadcrossing_d_unmade_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Unmade') & (df['type'] == 'Distribution') & (df['96mm'] == '2x96')]
+
+
+num_of_rows_rc_d_grassverge = roadcrossing_d_grassverge['length'].sum()
+
+num_of_rows_rc_d_unmade = roadcrossing_d_unmade['length'].sum()
+
+num_of_rows_rc_d_grassverge_2x96 = roadcrossing_d_grassverge_2x96['length'].sum()
+
+num_of_rows_rc_d_unmade_2x96 = roadcrossing_d_unmade_2x96['length'].sum()
+
+num_of_rows_rc_d_unmade_grassverge_total = num_of_rows_rc_d_grassverge + num_of_rows_rc_d_t_unmade + num_of_rows_rc_d_grassverge_2x96 + num_of_rows_rc_d_unmade_2x96
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["D62"] = num_of_rows_rc_d_unmade_grassverge_total
+wb.save(filename)
+
+# *********************** road crossing_D_tarmac loc no and wayleave no  *********************************************
+
+roadcrossing_d_tarmac = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Tarmac' ) & (df['type'] == 'Distribution') ]
+
+roadcrossing_d_tarmac_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Tarmac') & (df['type'] == 'Distribution')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_rc_d_tarmac = roadcrossing_d_tarmac['length'].sum()
+
+num_of_rows_rc_d_tarmac_2x96 = roadcrossing_d_tarmac_2x96['length'].sum()
+
+num_of_rows_rc_d_tarmac_total = num_of_rows_rc_d_tarmac + num_of_rows_rc_d_tarmac_2x96
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["E62"] = num_of_rows_rc_d_tarmac_total
+wb.save(filename)
+
+# *********************** road crossing_S_D_T_modular loc no and wayleave no  *********************************************
+
+roadcrossing_s_d_t_modular = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Modular' ) & (df['type'] == 'Acces, Distribution & Trunk') ]
+
+roadcrossing_s_d_t_modular_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Modular') & (df['type'] == 'Acces, Distribution & Trunk')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_rc_s_d_t_modular = roadcrossing_s_d_t_modular['length'].sum()
+
+num_of_rows_rc_s_d_t_modular_2x96 = roadcrossing_s_d_t_modular_2x96['length'].sum()
+
+num_of_rows_rc_s_d_t_modular_total = num_of_rows_rc_s_d_t_modular + num_of_rows_rc_s_d_t_modular_2x96
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["B63"] = num_of_rows_rc_s_d_t_modular_total
+wb.save(filename)
+
+# *********************** road crossing_S_D_T_concrete loc no and wayleave no  *********************************************
+
+roadcrossing_s_d_t_concrete = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Concrete') & (df['type'] == 'Acces, Distribution & Trunk') ]
+
+roadcrossing_s_d_t_concrete_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Concrete') & (df['type'] == 'Acces, Distribution & Trunk')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_rc_s_d_t_concrete = roadcrossing_s_d_t_concrete['length'].sum()
+
+num_of_rows_rc_s_d_t_concrete_2x96 = roadcrossing_s_d_t_concrete_2x96['length'].sum()
+
+num_of_rows_rc_s_d_t_concrete_total = num_of_rows_rc_s_d_t_concrete + num_of_rows_rc_s_d_t_concrete_2x96
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["C63"] = num_of_rows_rc_s_d_t_concrete_total
+wb.save(filename)
+
+# *********************** road crossing_S_D_T_unmade and grassverge loc no and wayleave no  *********************************************
+
+roadcrossing_s_d_t_grassverge = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Grass Verge') & (df['type'] == 'Acces, Distribution & Trunk')]
+
+roadcrossing_s_d_t_unmade = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Unmade') & (df['type'] == 'Acces, Distribution & Trunk')]
+
+roadcrossing_s_d_t_grassverge_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Grass Verge') & (df['type'] == 'Acces, Distribution & Trunk') & (df['96mm'] == '2x96')]
+
+roadcrossing_s_d_t_unmade_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Unmade') & (df['type'] == 'Acces, Distribution & Trunk') & (df['96mm'] == '2x96')]
+
+
+num_of_rows_rc_s_d_t_grassverge = roadcrossing_s_d_t_grassverge['length'].sum()
+
+num_of_rows_rc_s_d_t_unmade = roadcrossing_s_d_t_unmade['length'].sum()
+
+num_of_rows_rc_s_d_t_grassverge_2x96 = roadcrossing_s_d_t_grassverge_2x96['length'].sum()
+
+num_of_rows_rc_s_d_t_unmade_2x96 = roadcrossing_s_d_t_unmade_2x96['length'].sum()
+
+num_of_rows_rc_s_d_t_unmade_grassverge_total = num_of_rows_rc_s_d_t_grassverge + num_of_rows_rc_s_d_t_unmade + num_of_rows_rc_s_d_t_grassverge_2x96 + num_of_rows_rc_s_d_t_unmade_2x96
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["D63"] = num_of_rows_rc_s_d_t_unmade_grassverge_total
+wb.save(filename)
+
+# *********************** road crossing_S_D_T_tarmac loc no and wayleave no  *********************************************
+
+roadcrossing_s_d_t_tarmac = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Tarmac' ) & (df['type'] == 'Acces, Distribution & Trunk') ]
+
+roadcrossing_s_d_t_tarmac_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Tarmac') & (df['type'] == 'Acces, Distribution & Trunk')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_rc_s_d_t_tarmac = roadcrossing_s_d_t_tarmac['length'].sum()
+
+num_of_rows_rc_s_d_t_tarmac_2x96 = roadcrossing_s_d_t_tarmac_2x96['length'].sum()
+
+num_of_rows_rc_s_d_t_tarmac_total = num_of_rows_rc_s_d_t_tarmac + num_of_rows_rc_s_d_t_tarmac_2x96
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["E63"] = num_of_rows_rc_s_d_t_tarmac_total
+wb.save(filename)
+
+# *********************** road crossing_S_D_modular loc no and wayleave no  *********************************************
+
+roadcrossing_s_d_modular = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Modular' ) & (df['type'] == 'Access & Distribution') ]
+
+roadcrossing_s_d_modular_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Modular') & (df['type'] == 'Access & Distribution')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_rc_s_d_modular = roadcrossing_s_d_modular['length'].sum()
+
+num_of_rows_rc_s_d_modular_2x96 = roadcrossing_s_d_modular_2x96['length'].sum()
+
+num_of_rows_rc_s_d_modular_total = num_of_rows_rc_s_d_modular + num_of_rows_rc_s_d_modular_2x96
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["B64"] = num_of_rows_rc_s_d_modular_total
+wb.save(filename)
+
+# *********************** road crossing_S_D_concrete loc no and wayleave no  *********************************************
+
+roadcrossing_s_d_concrete = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Concrete') & (df['type'] == 'Access & Distribution') ]
+
+roadcrossing_s_d_concrete_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Concrete') & (df['type'] == 'Access & Distribution')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_rc_s_d_concrete = roadcrossing_s_d_concrete['length'].sum()
+
+num_of_rows_rc_s_d_concrete_2x96 = roadcrossing_s_d_concrete_2x96['length'].sum()
+
+num_of_rows_rc_s_d_concrete_total = num_of_rows_rc_s_d_concrete + num_of_rows_rc_s_d_concrete_2x96
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["C64"] = num_of_rows_rc_s_d_concrete_total
+wb.save(filename)
+
+# *********************** road crossing_S_D_unmade and grassverge loc no and wayleave no  *********************************************
+
+roadcrossing_s_d_grassverge = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Grass Verge') & (df['type'] == 'Access & Distribution')]
+
+roadcrossing_s_d_unmade = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Unmade') & (df['type'] == 'Access & Distribution')]
+
+roadcrossing_s_d_grassverge_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Grass Verge') & (df['type'] == 'Access & Distribution') & (df['96mm'] == '2x96')]
+
+roadcrossing_s_d_unmade_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Unmade') & (df['type'] == 'Access & Distribution') & (df['96mm'] == '2x96')]
+
+
+num_of_rows_rc_s_d_grassverge = roadcrossing_s_d_grassverge['length'].sum()
+
+num_of_rows_rc_s_d_unmade = roadcrossing_s_d_unmade['length'].sum()
+
+num_of_rows_rc_s_d_grassverge_2x96 = roadcrossing_s_d_grassverge_2x96['length'].sum()
+
+num_of_rows_rc_s_d_unmade_2x96 = roadcrossing_s_d_unmade_2x96['length'].sum()
+
+num_of_rows_rc_s_d_unmade_grassverge_total = num_of_rows_rc_s_d_grassverge + num_of_rows_rc_s_d_unmade + num_of_rows_rc_s_d_grassverge_2x96 + num_of_rows_rc_s_d_unmade_2x96
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["D64"] = num_of_rows_rc_s_d_unmade_grassverge_total
+wb.save(filename)
+
+# *********************** road crossing_S_D_tarmac loc no and wayleave no  *********************************************
+
+roadcrossing_s_d_tarmac = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Tarmac' ) & (df['type'] == 'Access & Distribution') ]
+
+roadcrossing_s_d_tarmac_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Tarmac') & (df['type'] == 'Access & Distribution')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_rc_s_d_tarmac = roadcrossing_s_d_tarmac['length'].sum()
+
+num_of_rows_rc_s_d_tarmac_2x96 = roadcrossing_s_d_tarmac_2x96['length'].sum()
+
+num_of_rows_rc_s_d_tarmac_total = num_of_rows_rc_s_d_tarmac + num_of_rows_rc_s_d_tarmac_2x96
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["E64"] = num_of_rows_rc_s_d_tarmac_total
+wb.save(filename)
+
+# *********************** road crossing_S_modular loc no and wayleave no  *********************************************
+
+roadcrossing_s_modular = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Modular' ) & (df['type'] == 'Access') ]
+
+roadcrossing_s_modular_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Modular') & (df['type'] == 'Access')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_rc_s_modular = roadcrossing_s_modular['length'].sum()
+
+num_of_rows_rc_s_modular_2x96 = roadcrossing_s_modular_2x96['length'].sum()
+
+num_of_rows_rc_s_modular_total = num_of_rows_rc_s_modular + num_of_rows_rc_s_modular_2x96
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["B65"] = num_of_rows_rc_s_modular_total
+wb.save(filename)
+
+# *********************** road crossing_S_concrete loc no and wayleave no  *********************************************
+
+roadcrossing_s_concrete = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Concrete') & (df['type'] == 'Access') ]
+
+roadcrossing_s_concrete_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Concrete') & (df['type'] == 'Access')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_rc_s_concrete = roadcrossing_s_concrete['length'].sum()
+
+num_of_rows_rc_s_concrete_2x96 = roadcrossing_s_concrete_2x96['length'].sum()
+
+num_of_rows_rc_s_concrete_total = num_of_rows_rc_s_concrete + num_of_rows_rc_s_concrete_2x96
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["C65"] = num_of_rows_rc_s_concrete_total
+wb.save(filename)
+
+# *********************** road crossing_S_unmade and grassverge loc no and wayleave no  *********************************************
+
+roadcrossing_s_grassverge = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Grass Verge') & (df['type'] == 'Access')]
+
+roadcrossing_s_unmade = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Unmade') & (df['type'] == 'Access')]
+
+roadcrossing_s_grassverge_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Grass Verge') & (df['type'] == 'Access') & (df['96mm'] == '2x96')]
+
+roadcrossing_s_unmade_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Unmade') & (df['type'] == 'Access') & (df['96mm'] == '2x96')]
+
+
+num_of_rows_rc_s_grassverge = roadcrossing_s_grassverge['length'].sum()
+
+num_of_rows_rc_s_unmade = roadcrossing_s_unmade['length'].sum()
+
+num_of_rows_rc_s_grassverge_2x96 = roadcrossing_s_grassverge_2x96['length'].sum()
+
+num_of_rows_rc_s_unmade_2x96 = roadcrossing_s_unmade_2x96['length'].sum()
+
+num_of_rows_rc_s_unmade_grassverge_total = num_of_rows_rc_s_grassverge + num_of_rows_rc_s_unmade + num_of_rows_rc_s_grassverge_2x96 + num_of_rows_rc_s_unmade_2x96
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["D65"] = num_of_rows_rc_s_unmade_grassverge_total
+wb.save(filename)
+
+# *********************** road crossing_S_tarmac loc no and wayleave no  *********************************************
+
+roadcrossing_s_tarmac = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Tarmac' ) & (df['type'] == 'Access') ]
+
+roadcrossing_s_tarmac_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Tarmac') & (df['type'] == 'Access')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_rc_s_tarmac = roadcrossing_s_tarmac['length'].sum()
+
+num_of_rows_rc_s_tarmac_2x96 = roadcrossing_s_tarmac_2x96['length'].sum()
+
+num_of_rows_rc_s_tarmac_total = num_of_rows_rc_s_tarmac + num_of_rows_rc_s_tarmac_2x96
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["E65"] = num_of_rows_rc_s_tarmac_total
+wb.save(filename)
+
+# *********************** road crossing_T_modular loc no and wayleave no  *********************************************
+
+roadcrossing_t_modular = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Modular' ) & (df['type'] == 'Trunk') ]
+
+roadcrossing_t_modular_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Modular') & (df['type'] == 'Trunk')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_rc_t_modular = roadcrossing_t_modular['length'].sum()
+
+num_of_rows_rc_t_modular_2x96 = roadcrossing_t_modular_2x96['length'].sum()
+
+num_of_rows_rc_t_modular_total = num_of_rows_rc_t_modular + num_of_rows_rc_t_modular_2x96
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["B66"] = num_of_rows_rc_t_modular_total
+wb.save(filename)
+
+# *********************** road crossing_T_concrete loc no and wayleave no  *********************************************
+
+roadcrossing_t_concrete = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Concrete') & (df['type'] == 'Trunk') ]
+
+roadcrossing_t_concrete_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Concrete') & (df['type'] == 'Trunk')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_rc_t_concrete = roadcrossing_t_concrete['length'].sum()
+
+num_of_rows_rc_t_concrete_2x96 = roadcrossing_t_concrete_2x96['length'].sum()
+
+num_of_rows_rc_t_concrete_total = num_of_rows_rc_t_concrete + num_of_rows_rc_t_concrete_2x96
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["C66"] = num_of_rows_rc_t_concrete_total
+wb.save(filename)
+
+# *********************** road crossing_T_unmade and grassverge loc no and wayleave no  *********************************************
+
+roadcrossing_t_grassverge = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Grass Verge') & (df['type'] == 'Trunk')]
+
+roadcrossing_t_unmade = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Unmade') & (df['type'] == 'Trunk')]
+
+roadcrossing_t_grassverge_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Grass Verge') & (df['type'] == 'Trunk') & (df['96mm'] == '2x96')]
+
+roadcrossing_t_unmade_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Unmade') & (df['type'] == 'Trunk') & (df['96mm'] == '2x96')]
+
+
+num_of_rows_rc_t_grassverge = roadcrossing_t_grassverge['length'].sum()
+
+num_of_rows_rc_t_unmade = roadcrossing_t_unmade['length'].sum()
+
+num_of_rows_rc_t_grassverge_2x96 = roadcrossing_t_grassverge_2x96['length'].sum()
+
+num_of_rows_rc_t_unmade_2x96 = roadcrossing_t_unmade_2x96['length'].sum()
+
+num_of_rows_rc_t_unmade_grassverge_total = num_of_rows_rc_t_grassverge + num_of_rows_rc_t_unmade + num_of_rows_rc_t_grassverge_2x96 + num_of_rows_rc_t_unmade_2x96
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["D66"] = num_of_rows_rc_t_unmade_grassverge_total
+wb.save(filename)
+
+# *********************** road crossing_T_tarmac loc no and wayleave no  *********************************************
+
+roadcrossing_t_tarmac = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Tarmac' ) & (df['type'] == 'Trunk') ]
+
+roadcrossing_t_tarmac_2x96 = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Road Crossing') & (df['loc'] == False)
+                         & (df['wayleave'] == False) & (df['material'] == 'Tarmac') & (df['type'] == 'Trunk')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_rc_t_tarmac = roadcrossing_t_tarmac['length'].sum()
+
+num_of_rows_rc_t_tarmac_2x96 = roadcrossing_t_tarmac_2x96['length'].sum()
+
+num_of_rows_rc_t_tarmac_total = num_of_rows_rc_t_tarmac + num_of_rows_rc_t_tarmac_2x96
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["E66"] = num_of_rows_rc_t_tarmac_total
+wb.save(filename)
