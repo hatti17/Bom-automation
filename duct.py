@@ -4827,3 +4827,813 @@ ws_tables = []
 ws["M66"] = num_of_rows_rc_t_tarmac_total_way
 wb.save(filename)
 
+# *********************** carriageway_S+T_modular loc yes  *********************************************
+
+carriageway_s_t_modular_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Modular' ) & (df['type'] == 'Access & Trunk') ]
+
+carriageway_s_t_modular_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Modular') & (df['type'] == 'Access & Trunk')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_cw_s_t_modular_loc = carriageway_s_t_modular_loc['length'].sum()
+
+num_of_rows_cw_s_t_modular_2x96_loc = carriageway_s_t_modular_2x96_loc['length'].sum()
+
+num_of_rows_cw_s_t_modular_total_loc = num_of_rows_cw_s_t_modular_loc + num_of_rows_cw_s_t_modular_2x96_loc
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["F38"] = num_of_rows_cw_s_t_modular_total_loc
+wb.save(filename)
+
+# *********************** carriageway_S+T_concrete loc yes  *********************************************
+
+carriageway_s_t_concrete_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Concrete') & (df['type'] == 'Access & Trunk') ]
+
+carriageway_s_t_concrete_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Concrete') & (df['type'] == 'Access & Trunk')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_cw_s_t_concrete_loc = carriageway_s_t_concrete_loc['length'].sum()
+
+num_of_rows_cw_s_t_concrete_2x96_loc = carriageway_s_t_concrete_2x96_loc['length'].sum()
+
+num_of_rows_cw_s_t_concrete_total_loc = num_of_rows_cw_s_t_concrete_loc + num_of_rows_cw_s_t_concrete_2x96_loc
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["G38"] = num_of_rows_cw_s_t_concrete_total_loc
+wb.save(filename)
+
+# *********************** carriageway_S+T_unmade and grassverge loc yes  *********************************************
+
+carriageway_s_t_grassverge_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Grass Verge') & (df['type'] == 'Access & Trunk')]
+
+carriageway_s_t_unmade_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Unmade') & (df['type'] == 'Access & Trunk')]
+
+carriageway_s_t_grassverge_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Grass Verge') & (df['type'] == 'Access & Trunk') & (df['96mm'] == '2x96')]
+
+carriageway_s_t_unmade_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Unmade') & (df['type'] == 'Access & Trunk') & (df['96mm'] == '2x96')]
+
+
+num_of_rows_cw_s_t_grassverge_loc = carriageway_s_t_grassverge_loc['length'].sum()
+
+num_of_rows_cw_s_t_unmade_loc = carriageway_s_t_unmade_loc['length'].sum()
+
+num_of_rows_cw_s_t_grassverge_2x96_loc = carriageway_s_t_grassverge_2x96_loc['length'].sum()
+
+num_of_rows_cw_s_t_unmade_2x96_loc = carriageway_s_t_unmade_2x96_loc['length'].sum()
+
+num_of_rows_cw_s_t_unmade_grassverge_total_loc = num_of_rows_cw_s_t_grassverge_loc + num_of_rows_cw_s_t_unmade_loc + num_of_rows_cw_s_t_grassverge_2x96_loc + num_of_rows_cw_s_t_unmade_2x96_loc
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["H38"] = num_of_rows_cw_s_t_unmade_grassverge_total_loc
+wb.save(filename)
+
+# *********************** carriageway_S+T_tarmac loc yes  *********************************************
+
+carriageway_s_t_tarmac_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Tarmac' ) & (df['type'] == 'Access & Trunk') ]
+
+carriageway_s_t_tarmac_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Tarmac') & (df['type'] == 'Access & Trunk')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_cw_s_t_tarmac_loc = carriageway_s_t_tarmac_loc['length'].sum()
+
+num_of_rows_cw_s_t_tarmac_2x96_loc = carriageway_s_t_tarmac_2x96_loc['length'].sum()
+
+num_of_rows_cw_s_t_tarmac_total_loc = num_of_rows_cw_s_t_tarmac_loc + num_of_rows_cw_s_t_tarmac_2x96_loc
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["I38"] = num_of_rows_cw_s_t_tarmac_total_loc
+wb.save(filename)
+
+# *********************** carriageway_D+T_modular loc yes  *********************************************
+
+carriageway_d_t_modular_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Modular' ) & (df['type'] == 'Distribution & Trunk') ]
+
+carriageway_d_t_modular_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Modular') & (df['type'] == 'Distribution & Trunk')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_cw_d_t_modular_loc = carriageway_d_t_modular_loc['length'].sum()
+
+num_of_rows_cw_d_t_modular_2x96_loc = carriageway_d_t_modular_2x96_loc['length'].sum()
+
+num_of_rows_cw_d_t_modular_total_loc = num_of_rows_cw_d_t_modular_loc + num_of_rows_cw_d_t_modular_2x96_loc
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["F39"] = num_of_rows_cw_d_t_modular_total_loc
+wb.save(filename)
+
+# *********************** carriageway_D+T_concrete loc yes  *********************************************
+
+carriageway_d_t_concrete_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                          & (df['material'] == 'Concrete') & (df['type'] == 'Distribution & Trunk') ]
+
+carriageway_d_t_concrete_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Concrete') & (df['type'] == 'Distribution & Trunk')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_cw_d_t_concrete_loc = carriageway_d_t_concrete_loc['length'].sum()
+
+num_of_rows_cw_d_t_concrete_2x96_loc = carriageway_d_t_concrete_2x96_loc['length'].sum()
+
+num_of_rows_cw_d_t_concrete_total_loc = num_of_rows_cw_d_t_concrete_loc + num_of_rows_cw_d_t_concrete_2x96_loc
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["G39"] = num_of_rows_cw_d_t_concrete_total_loc
+wb.save(filename)
+
+# *********************** carriageway_D+T_unmade and grassverge loc yes  *********************************************
+
+carriageway_d_t_grassverge_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Grass Verge') & (df['type'] == 'Distribution & Trunk')]
+
+carriageway_d_t_unmade_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Unmade') & (df['type'] == 'Distribution & Trunk')]
+
+carriageway_d_t_grassverge_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Grass Verge') & (df['type'] == 'Distribution & Trunk')
+                         & (df['96mm'] == '2x96')]
+
+carriageway_d_t_unmade_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Unmade') & (df['type'] == 'Distribution & Trunk')
+                         & (df['96mm'] == '2x96')]
+
+
+num_of_rows_cw_d_t_grassverge_loc = carriageway_d_t_grassverge_loc['length'].sum()
+
+num_of_rows_cw_d_t_unmade_loc = carriageway_d_t_unmade_loc['length'].sum()
+
+num_of_rows_cw_d_t_grassverge_2x96_loc = carriageway_d_t_grassverge_2x96_loc['length'].sum()
+
+num_of_rows_cw_d_t_unmade_2x96_loc = carriageway_d_t_unmade_2x96_loc['length'].sum()
+
+num_of_rows_cw_d_t_unmade_grassverge_total_loc = num_of_rows_cw_d_t_grassverge_loc + num_of_rows_cw_d_t_unmade_loc + num_of_rows_cw_d_t_grassverge_2x96_loc + num_of_rows_cw_d_t_unmade_2x96_loc
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["H39"] = num_of_rows_cw_d_t_unmade_grassverge_total_loc
+wb.save(filename)
+
+# *********************** carriageway_D+T_tarmac loc yes  *********************************************
+
+carriageway_d_t_tarmac_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Tarmac' ) & (df['type'] == 'Distribution & Trunk') ]
+
+carriageway_d_t_tarmac_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Tarmac') & (df['type'] == 'Distribution & Trunk')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_cw_d_t_tarmac_loc = carriageway_d_t_tarmac_loc['length'].sum()
+
+num_of_rows_cw_d_t_tarmac_2x96_loc = carriageway_d_t_tarmac_2x96_loc['length'].sum()
+
+num_of_rows_cw_d_t_tarmac_total_loc = num_of_rows_cw_d_t_tarmac_loc + num_of_rows_cw_d_t_tarmac_2x96_loc
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["I39"] = num_of_rows_cw_d_t_tarmac_total_loc
+wb.save(filename)
+
+# *********************** carriageway_D_modular loc yes  *********************************************
+
+carriageway_d_modular_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Modular' ) & (df['type'] == 'Distribution') ]
+
+carriageway_d_modular_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Modular') & (df['type'] == 'Distribution')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_cw_d_modular_loc = carriageway_d_modular_loc['length'].sum()
+
+num_of_rows_cw_d_modular_2x96_loc = carriageway_d_modular_2x96_loc['length'].sum()
+
+num_of_rows_cw_d_modular_total_loc = num_of_rows_cw_d_modular_loc + num_of_rows_cw_d_modular_2x96_loc
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["F40"] = num_of_rows_cw_d_modular_total_loc
+wb.save(filename)
+
+# *********************** carriageway_D_concrete loc yes  *********************************************
+
+carriageway_d_concrete_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Concrete') & (df['type'] == 'Distribution') ]
+
+carriageway_d_concrete_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Concrete') & (df['type'] == 'Distribution')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_cw_d_concrete_loc = carriageway_d_concrete_loc['length'].sum()
+
+num_of_rows_cw_d_concrete_2x96_loc = carriageway_d_concrete_2x96_loc['length'].sum()
+
+num_of_rows_cw_d_concrete_total_loc = num_of_rows_cw_d_concrete_loc + num_of_rows_cw_d_concrete_2x96_loc
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["G40"] = num_of_rows_cw_d_concrete_total_loc
+wb.save(filename)
+
+# *********************** carriageway_D_unmade and grassverge loc yes  *********************************************
+
+carriageway_d_grassverge_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Grass Verge') & (df['type'] == 'Distribution')]
+
+carriageway_d_unmade_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Unmade') & (df['type'] == 'Distribution')]
+
+carriageway_d_grassverge_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Grass Verge') & (df['type'] == 'Distribution')
+                         & (df['96mm'] == '2x96')]
+
+carriageway_d_unmade_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Unmade') & (df['type'] == 'Distribution')
+                         & (df['96mm'] == '2x96')]
+
+
+num_of_rows_cw_d_grassverge_loc = carriageway_d_grassverge_loc['length'].sum()
+
+num_of_rows_cw_d_unmade_loc = carriageway_d_unmade_loc['length'].sum()
+
+num_of_rows_cw_d_grassverge_2x96_loc = carriageway_d_grassverge_2x96_loc['length'].sum()
+
+num_of_rows_cw_d_unmade_2x96_loc = carriageway_d_unmade_2x96_loc['length'].sum()
+
+num_of_rows_cw_d_unmade_grassverge_total_loc = num_of_rows_cw_d_grassverge_loc + num_of_rows_cw_d_unmade_loc + num_of_rows_cw_d_grassverge_2x96_loc + num_of_rows_cw_d_unmade_2x96_loc
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["H40"] = num_of_rows_cw_d_unmade_grassverge_total_loc
+wb.save(filename)
+
+# *********************** carriageway_D_tarmac loc yes  *********************************************
+
+carriageway_d_tarmac_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Tarmac' ) & (df['type'] == 'Distribution') ]
+
+carriageway_d_tarmac_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Tarmac') & (df['type'] == 'Distribution')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_cw_d_tarmac_loc = carriageway_d_tarmac_loc['length'].sum()
+
+num_of_rows_cw_d_tarmac_2x96_loc = carriageway_d_tarmac_2x96_loc['length'].sum()
+
+num_of_rows_cw_d_tarmac_total_loc = num_of_rows_cw_d_tarmac_loc + num_of_rows_cw_d_tarmac_2x96_loc
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["I40"] = num_of_rows_cw_d_tarmac_total_loc
+wb.save(filename)
+
+# *********************** carriageway_S+D+T_modular loc yes  *********************************************
+
+carriageway_s_d_t_modular_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Modular' ) & (df['type'] == 'Acces, Distribution & Trunk') ]
+
+carriageway_s_d_t_modular_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Modular') & (df['type'] == 'Acces, Distribution & Trunk')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_cw_s_d_t_modular_loc = carriageway_s_d_t_modular_loc['length'].sum()
+
+num_of_rows_cw_s_d_t_modular_2x96_loc = carriageway_s_d_t_modular_2x96_loc['length'].sum()
+
+num_of_rows_cw_s_d_t_modular_total_loc = num_of_rows_cw_s_d_t_modular_loc + num_of_rows_cw_s_d_t_modular_2x96_loc
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["F41"] = num_of_rows_cw_s_d_t_modular_total_loc
+wb.save(filename)
+
+# *********************** carriageway_S+D+T_concrete loc yes  *********************************************
+
+carriageway_s_d_t_concrete_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Concrete') & (df['type'] == 'Acces, Distribution & Trunk') ]
+
+carriageway_s_d_t_concrete_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Concrete') & (df['type'] == 'Acces, Distribution & Trunk')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_cw_s_d_t_concrete_loc = carriageway_s_d_t_concrete_loc['length'].sum()
+
+num_of_rows_cw_s_d_t_concrete_2x96_loc = carriageway_s_d_t_concrete_2x96_loc['length'].sum()
+
+num_of_rows_cw_s_d_t_concrete_total_loc = num_of_rows_cw_s_d_t_concrete_loc + num_of_rows_cw_s_d_t_concrete_2x96_loc
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["G41"] = num_of_rows_cw_s_d_t_concrete_total_loc
+wb.save(filename)
+
+# *********************** carriageway_S+D+T_unmade and grassverge loc yes  *********************************************
+
+carriageway_s_d_t_grassverge_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Grass Verge') & (df['type'] == 'Acces, Distribution & Trunk')]
+
+carriageway_s_d_t_unmade_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Unmade') & (df['type'] == 'Acces, Distribution & Trunk')]
+
+carriageway_s_d_t_grassverge_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Grass Verge') & (df['type'] == 'Acces, Distribution & Trunk')
+                         & (df['96mm'] == '2x96')]
+
+carriageway_s_d_t_unmade_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Unmade') & (df['type'] == 'Acces, Distribution & Trunk')
+                         & (df['96mm'] == '2x96')]
+
+
+num_of_rows_cw_s_d_t_grassverge_loc = carriageway_s_d_t_grassverge_loc['length'].sum()
+
+num_of_rows_cw_s_d_t_unmade_loc = carriageway_s_d_t_unmade_loc['length'].sum()
+
+num_of_rows_cw_s_d_t_grassverge_2x96_loc = carriageway_s_d_t_grassverge_2x96_loc['length'].sum()
+
+num_of_rows_cw_s_d_t_unmade_2x96_loc = carriageway_s_d_t_unmade_2x96_loc['length'].sum()
+
+num_of_rows_cw_s_d_t_unmade_grassverge_total_loc = num_of_rows_cw_s_d_t_grassverge_loc + num_of_rows_cw_s_d_t_unmade_loc + num_of_rows_cw_s_d_t_grassverge_2x96_loc + num_of_rows_cw_s_d_t_unmade_2x96_loc
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["H41"] = num_of_rows_cw_s_d_t_unmade_grassverge_total_loc
+wb.save(filename)
+
+# *********************** carriageway_S+D+T_tarmac loc yes  *********************************************
+
+carriageway_s_d_t_tarmac_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Tarmac' ) & (df['type'] == 'Acces, Distribution & Trunk') ]
+
+carriageway_s_d_t_tarmac_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Tarmac') & (df['type'] == 'Acces, Distribution & Trunk')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_cw_s_d_t_tarmac_loc = carriageway_s_d_t_tarmac_loc['length'].sum()
+
+num_of_rows_cw_s_d_t_tarmac_2x96_loc = carriageway_s_d_t_tarmac_2x96_loc['length'].sum()
+
+num_of_rows_cw_s_d_t_tarmac_total_loc = num_of_rows_cw_s_d_t_tarmac_loc + num_of_rows_cw_s_d_t_tarmac_2x96_loc
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["I41"] = num_of_rows_cw_s_d_t_tarmac_total_loc
+wb.save(filename)
+
+# *********************** carriageway_S+D_modular loc yes  *********************************************
+
+carriageway_s_d_modular_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Modular' ) & (df['type'] == 'Access & Distribution') ]
+
+carriageway_s_d_modular_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Modular') & (df['type'] == 'Access & Distribution')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_cw_s_d_modular_loc = carriageway_s_d_modular_loc['length'].sum()
+
+num_of_rows_cw_s_d_modular_2x96_loc = carriageway_s_d_modular_2x96_loc['length'].sum()
+
+num_of_rows_cw_s_d_modular_total_loc = num_of_rows_cw_s_d_modular_loc + num_of_rows_cw_s_d_modular_2x96_loc
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["F42"] = num_of_rows_cw_s_d_modular_total_loc
+wb.save(filename)
+
+# *********************** carriageway_S+D_concrete loc yes  *********************************************
+
+carriageway_s_d_concrete_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Concrete') & (df['type'] == 'Access & Distribution') ]
+
+carriageway_s_d_concrete_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Concrete') & (df['type'] == 'Access & Distribution')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_cw_s_d_concrete_loc = carriageway_s_d_concrete_loc['length'].sum()
+
+num_of_rows_cw_s_d_concrete_2x96_loc = carriageway_s_d_concrete_2x96_loc['length'].sum()
+
+num_of_rows_cw_s_d_concrete_total_loc = num_of_rows_cw_s_d_concrete_loc + num_of_rows_cw_s_d_concrete_2x96_loc
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["G42"] = num_of_rows_cw_s_d_concrete_total_loc
+wb.save(filename)
+
+# *********************** carriageway_S+D_unmade and grassverge loc yes  *********************************************
+
+carriageway_s_d_grassverge_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Grass Verge') & (df['type'] == 'Access & Distribution')]
+
+carriageway_s_d_unmade_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Unmade') & (df['type'] == 'Access & Distribution')]
+
+carriageway_s_d_grassverge_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Grass Verge') & (df['type'] == 'Access & Distribution')
+                         & (df['96mm'] == '2x96')]
+
+carriageway_s_d_unmade_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Unmade') & (df['type'] == 'Access & Distribution')
+                         & (df['96mm'] == '2x96')]
+
+
+num_of_rows_cw_s_d_grassverge_loc = carriageway_s_d_grassverge_loc['length'].sum()
+
+num_of_rows_cw_s_d_unmade_loc = carriageway_s_d_unmade_loc['length'].sum()
+
+num_of_rows_cw_s_d_grassverge_2x96_loc = carriageway_s_d_grassverge_2x96_loc['length'].sum()
+
+num_of_rows_cw_s_d_unmade_2x96_loc = carriageway_s_d_unmade_2x96_loc['length'].sum()
+
+num_of_rows_cw_s_d_unmade_grassverge_total_loc = num_of_rows_cw_s_d_grassverge_loc + num_of_rows_cw_s_d_unmade_loc + num_of_rows_cw_s_d_grassverge_2x96_loc + num_of_rows_cw_s_d_unmade_2x96_loc
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["H42"] = num_of_rows_cw_s_d_unmade_grassverge_total_loc
+wb.save(filename)
+
+# *********************** carriageway_S+D_tarmac loc yes  *********************************************
+
+carriageway_s_d_tarmac_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Tarmac' ) & (df['type'] == 'Access & Distribution') ]
+
+carriageway_s_d_tarmac_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Tarmac') & (df['type'] == 'Access & Distribution')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_cw_s_d_tarmac_loc = carriageway_s_d_tarmac_loc['length'].sum()
+
+num_of_rows_cw_s_d_tarmac_2x96_loc = carriageway_s_d_tarmac_2x96_loc['length'].sum()
+
+num_of_rows_cw_s_d_tarmac_total_loc = num_of_rows_cw_s_d_tarmac_loc + num_of_rows_cw_s_d_tarmac_2x96_loc
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["I42"] = num_of_rows_cw_s_d_tarmac_total_loc
+wb.save(filename)
+
+# *********************** carriageway_S_modular loc yes  *********************************************
+
+carriageway_s_modular_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Modular' ) & (df['type'] == 'Access') ]
+
+carriageway_s_modular_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Modular') & (df['type'] == 'Access')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_cw_s_modular_loc = carriageway_s_modular_loc['length'].sum()
+
+num_of_rows_cw_s_modular_2x96_loc = carriageway_s_modular_2x96_loc['length'].sum()
+
+num_of_rows_cw_s_modular_total_loc = num_of_rows_cw_s_modular_loc + num_of_rows_cw_s_modular_2x96_loc
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["F43"] = num_of_rows_cw_s_modular_total_loc
+wb.save(filename)
+
+# *********************** carriageway_S_concrete loc yes  *********************************************
+
+carriageway_s_concrete_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Concrete') & (df['type'] == 'Access') ]
+
+carriageway_s_concrete_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Concrete') & (df['type'] == 'Access')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_cw_s_concrete_loc = carriageway_s_concrete_loc['length'].sum()
+
+num_of_rows_cw_s_concrete_2x96_loc = carriageway_s_concrete_2x96_loc['length'].sum()
+
+num_of_rows_cw_s_concrete_total_loc = num_of_rows_cw_s_concrete_loc + num_of_rows_cw_s_concrete_2x96_loc
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["G43"] = num_of_rows_cw_s_concrete_total_loc
+wb.save(filename)
+
+# *********************** carriageway_S_unmade and grassverge loc yes  *********************************************
+
+carriageway_s_grassverge_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Grass Verge') & (df['type'] == 'Access')]
+
+carriageway_s_unmade_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Unmade') & (df['type'] == 'Access')]
+
+carriageway_s_grassverge_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Grass Verge') & (df['type'] == 'Access')
+                         & (df['96mm'] == '2x96')]
+
+carriageway_s_unmade_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Unmade') & (df['type'] == 'Access')
+                         & (df['96mm'] == '2x96')]
+
+
+num_of_rows_cw_s_grassverge_loc = carriageway_s_grassverge_loc['length'].sum()
+
+num_of_rows_cw_s_unmade_loc = carriageway_s_unmade_loc['length'].sum()
+
+num_of_rows_cw_s_grassverge_2x96_loc = carriageway_s_grassverge_2x96_loc['length'].sum()
+
+num_of_rows_cw_s_unmade_2x96_loc = carriageway_s_unmade_2x96_loc['length'].sum()
+
+num_of_rows_cw_s_unmade_grassverge_total_loc = num_of_rows_cw_s_grassverge_loc + num_of_rows_cw_s_unmade_loc + num_of_rows_cw_s_grassverge_2x96_loc + num_of_rows_cw_s_unmade_2x96_loc
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["H43"] = num_of_rows_cw_s_unmade_grassverge_total_loc
+wb.save(filename)
+
+# *********************** carriageway_S_tarmac loc yes  *********************************************
+
+carriageway_s_tarmac_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Tarmac' ) & (df['type'] == 'Access') ]
+
+carriageway_s_tarmac_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Tarmac') & (df['type'] == 'Access')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_cw_s_tarmac_loc = carriageway_s_tarmac_loc['length'].sum()
+
+num_of_rows_cw_s_tarmac_2x96_loc = carriageway_s_tarmac_2x96_loc['length'].sum()
+
+num_of_rows_cw_s_tarmac_total_loc = num_of_rows_cw_s_tarmac_loc + num_of_rows_cw_s_tarmac_2x96_loc
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["I43"] = num_of_rows_cw_s_tarmac_total_loc
+wb.save(filename)
+
+# *********************** carriageway_T_modular loc yes  *********************************************
+
+carriageway_t_modular_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Modular' ) & (df['type'] == 'Trunk') ]
+
+carriageway_t_modular_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Modular') & (df['type'] == 'Trunk')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_cw_t_modular_loc = carriageway_t_modular_loc['length'].sum()
+
+num_of_rows_cw_t_modular_2x96_loc = carriageway_t_modular_2x96_loc['length'].sum()
+
+num_of_rows_cw_t_modular_total_loc = num_of_rows_cw_t_modular_loc + num_of_rows_cw_t_modular_2x96_loc
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["F44"] = num_of_rows_cw_t_modular_total_loc
+wb.save(filename)
+
+# *********************** carriageway_T_concrete loc yes  *********************************************
+
+carriageway_t_concrete_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Concrete') & (df['type'] == 'Trunk') ]
+
+carriageway_t_concrete_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Concrete') & (df['type'] == 'Trunk')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_cw_t_concrete_loc = carriageway_t_concrete_loc['length'].sum()
+
+num_of_rows_cw_t_concrete_2x96_loc = carriageway_t_concrete_2x96_loc['length'].sum()
+
+num_of_rows_cw_t_concrete_total_loc = num_of_rows_cw_t_concrete_loc + num_of_rows_cw_t_concrete_2x96_loc
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["G44"] = num_of_rows_cw_t_concrete_total_loc
+wb.save(filename)
+
+# *********************** carriageway_t_unmade and grassverge loc yes  *********************************************
+
+carriageway_t_grassverge_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Grass Verge') & (df['type'] == 'Trunk')]
+
+carriageway_t_unmade_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Unmade') & (df['type'] == 'Trunk')]
+
+carriageway_t_grassverge_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Grass Verge') & (df['type'] == 'Trunk')
+                         & (df['96mm'] == '2x96')]
+
+carriageway_t_unmade_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Unmade') & (df['type'] == 'Trunk')
+                         & (df['96mm'] == '2x96')]
+
+
+num_of_rows_cw_t_grassverge_loc = carriageway_t_grassverge_loc['length'].sum()
+
+num_of_rows_cw_t_unmade_loc = carriageway_t_unmade_loc['length'].sum()
+
+num_of_rows_cw_t_grassverge_2x96_loc = carriageway_t_grassverge_2x96_loc['length'].sum()
+
+num_of_rows_cw_t_unmade_2x96_loc = carriageway_t_unmade_2x96_loc['length'].sum()
+
+num_of_rows_cw_t_unmade_grassverge_total_loc = num_of_rows_cw_t_grassverge_loc + num_of_rows_cw_t_unmade_loc + num_of_rows_cw_t_grassverge_2x96_loc + num_of_rows_cw_t_unmade_2x96_loc
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["H44"] = num_of_rows_cw_t_unmade_grassverge_total_loc
+wb.save(filename)
+
+# *********************** carriageway_T_tarmac loc yes  *********************************************
+
+carriageway_t_tarmac_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Tarmac' ) & (df['type'] == 'Trunk') ]
+
+carriageway_t_tarmac_2x96_loc = df.loc[(df['state'] == 'Planned') & (df['surface'] == 'Carriageway') & (df['loc'] == True)
+                         & (df['material'] == 'Tarmac') & (df['type'] == 'Trunk')
+                         & (df['96mm'] == '2x96')]
+
+num_of_rows_cw_t_tarmac_loc = carriageway_t_tarmac_loc['length'].sum()
+
+num_of_rows_cw_t_tarmac_2x96_loc = carriageway_t_tarmac_2x96_loc['length'].sum()
+
+num_of_rows_cw_t_tarmac_total_loc = num_of_rows_cw_t_tarmac_loc + num_of_rows_cw_t_tarmac_2x96_loc
+
+
+filename = "Documents/Output/BOQ and BOM.xlsx"
+
+n = 4
+wb = load_workbook(filename)
+sheets = wb.sheetnames
+ws = wb[sheets[n]]
+ws_tables = []
+ws["I44"] = num_of_rows_cw_t_tarmac_total_loc
+wb.save(filename)
+
